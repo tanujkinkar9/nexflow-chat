@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #ffffff;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
+
+.input {
+  @apply w-full px-3 py-2 text-sm border border-gray-200 rounded-lg outline-none transition-all;
+  @apply focus:border-sky-400 focus:ring-2 focus:ring-sky-50;
+}
+
+.btn-primary {
+  @apply px-4 py-2 text-sm font-medium text-white bg-sky-500 rounded-lg hover:bg-sky-600 transition-colors;
+}
+
+.btn-ghost {
+  @apply px-4 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 transition-colors;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Input focus states */
+input:focus {
+  border-color: #111 !important;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+input:hover:not(:focus) {
+  border-color: #9ca3af;
+}
+
+/* Responsive — hide left panel on mobile */
+@media (max-width: 768px) {
+  /* Target the left black panel */
+  div[style*="width: 420px"] {
+    display: none !important;
+  }
+  /* Show mobile logo */
+  a[style*="display: none"] {
+    display: inline-flex !important;
+  }
+}
